@@ -1,7 +1,7 @@
 {
-  "name": "Template",
+  "name": "app-discovery-dashboard",
   "version": "0.0.1",
-  "description": "A React web template",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",

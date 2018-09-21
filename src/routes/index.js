@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, BrowserRouter, Switch } from 'react-router-dom'
+import { Route, HashRouter, Switch } from 'react-router-dom'
 import { ConnectedRouter } from 'react-router-redux'
 import { createBrowserHistory } from 'history'
 import MainPage from '../pages/MainPage'
@@ -11,14 +11,14 @@ export const history = createBrowserHistory()
 
 const Routes = () => (
   <ConnectedRouter history={history}>
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
-        <Route exact path="/" component={LoginPage} />
-        <Route path="/main" component={MainPage} />
+        <Route exact path="/" component={MainPage} />
+        <Route path="/login" component={LoginPage} />
         <Route path="/about" component={AboutPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   </ConnectedRouter>
 )
 

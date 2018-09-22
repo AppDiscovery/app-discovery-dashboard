@@ -1,15 +1,12 @@
 import React from 'react'
-import { Provider } from 'react-redux'
-import generateConfiguredStore from '../store'
-import Routes, { history } from '../routes/index'
-
-const initialState = {}
-const store = generateConfiguredStore(initialState, history)
+import NavigationBar from './NavigationBar'
+import Routes from '../routes/index'
 
 const App = () => (
-  <Provider store={store}>
-    <Routes history={history} />
-  </Provider>
+  <div>
+    <NavigationBar />
+    <Routes />
+  </div>
 )
 
 export default App

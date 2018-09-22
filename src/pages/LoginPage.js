@@ -1,6 +1,7 @@
 import React from 'react'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 import propsToImmutable from 'hocs/propsToImmutable'
 import { login } from 'actions/user'
 
@@ -16,10 +17,10 @@ class LoginPage extends React.Component {
 
   validate() {
     const { username, password } = this.state
-    const { login } = this.props
+    const { history, login } = this.props
 
     if (username === 'admin' && password) {
-      login(username, password)
+      login(username, password).then(() => history.push('/upload'))
     }
   }
 
@@ -46,4 +47,5 @@ class LoginPage extends React.Component {
   }
 }
 
-export default compose(connect(null, { login }), propsToImmutable)(LoginPage)
+// eslint-disable-next-line max-len
+export default compose(connect(null, { login }), withRouter, propsToImmutable)(LoginPage)

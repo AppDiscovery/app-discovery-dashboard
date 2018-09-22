@@ -6,6 +6,7 @@ import MainPage from '../pages/MainPage'
 import AboutPage from '../pages/AboutPage'
 import NotFoundPage from '../pages/NotFoundPage'
 import LoginPage from '../pages/LoginPage'
+import UploadPage from '../pages/UploadPage'
 
 export const history = createBrowserHistory()
 
@@ -15,6 +16,7 @@ const Routes = () => (
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route path="/login" component={LoginPage} />
+        <Route path="/upload" component={UploadPage} />
         <Route path="/about" component={AboutPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>

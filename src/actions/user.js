@@ -8,4 +8,8 @@ export const login = createAction(LOGIN, (username, password) =>
     } else {
       reject()
     }
-  }).then(data => data))
+  }).then((data) => {
+    sessionStorage.setItem('isLoggedIn', true)
+    return data
+  })
+)

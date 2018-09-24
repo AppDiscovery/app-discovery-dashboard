@@ -47,5 +47,6 @@ class LoginPage extends React.Component {
   }
 }
 
-// eslint-disable-next-line max-len
-export default compose(connect(null, { login }), withRouter, propsToImmutable)(LoginPage)
+export default compose(connect(null, { login }), withRouter, propsToImmutable)(
+  LoginPage
+)

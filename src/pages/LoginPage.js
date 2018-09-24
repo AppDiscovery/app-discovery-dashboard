@@ -20,7 +20,7 @@ class LoginPage extends React.Component {
     const { history, login } = this.props
 
     if (username === 'admin' && password) {
-      login(username, password).then(() => history.push('/upload'))
+      login(username, password).then(() => history.push('/'))
     }
   }
 

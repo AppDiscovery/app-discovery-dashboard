@@ -10,6 +10,7 @@ export const login = createAction(LOGIN, (username, password) =>
     }
   }).then((data) => {
     sessionStorage.setItem('isLoggedIn', true)
+    sessionStorage.setItem('username', username)
     return data
   })
 )

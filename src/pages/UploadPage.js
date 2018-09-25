@@ -1,16 +1,19 @@
 import React from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
+// import cx from 'classnames'
+import FileInput from 'components/FileInput'
 import config from '../config'
+import styles from './UploadPage.scss'
 
 class UploadPage extends React.Component {
-  constructor(props) {
-    super(props)
+  // constructor(props) {
+  //   super(props)
 
-    this.state = {
-      targz: null,
-    }
-  }
+  //   this.state = {
+  //     targz: null,
+  //   }
+  // }
 
   componentWillMount() {
     if (!sessionStorage.getItem('isLoggedIn')) {
@@ -18,11 +21,9 @@ class UploadPage extends React.Component {
     }
   }
 
-  uploadFile() {
-    const { targz } = this.state
-
+  uploadFile = (file) => {
     const formData = new FormData()
-    formData.append('targz', targz)
+    formData.append('targz', file)
 
     axios({
       method: 'post',
@@ -36,12 +37,11 @@ class UploadPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <input
-          type="file"
-          onChange={e => this.setState({ targz: e.target.files[0] })}
+      <div className={styles.root}>
+        <FileInput
+          className={styles.fileInput}
+          uploadFile={file => this.uploadFile(file)}
         />
-        <button onClick={() => this.uploadFile()}>Upload</button>
       </div>
     )
   }

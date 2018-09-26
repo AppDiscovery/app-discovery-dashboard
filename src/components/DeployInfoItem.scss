@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+}
+
+.itemName {
+  width: 8rem;
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.inputBar {
+  margin-left: 1rem;
+}
